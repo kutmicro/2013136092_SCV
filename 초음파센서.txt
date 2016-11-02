@@ -6,8 +6,8 @@
  * by Hemal Chevli - black-electronics.com
 */
 
-int trig = 13;           // 변수 trig를 생성하고 13를 대입한다
-int echo = 12;          // 변수 echo를 생성하고 12을 대입한다
+int trig = 22;           // 변수 trig를 생성하고 22를 대입한다
+int echo = 24;          // 변수 echo를 생성하고 24을 대입한다
 
 void setup() {                      
 pinMode(trig, OUTPUT);  // trig(13)핀을 출력모드로 설정한다
