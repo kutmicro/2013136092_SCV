@@ -1,5 +1,3 @@
-http://blog.naver.com/roboholic84/220780100507
-
 /*
  * Show the distance in centimeters and in inches on Serial Monitor
  The circuit:
@@ -8,24 +6,24 @@ http://blog.naver.com/roboholic84/220780100507
  * by Hemal Chevli - black-electronics.com
 */
 
-int trig = 13;           // º¯¼ö trig¸¦ »ı¼ºÇÏ°í 13¸¦ ´ëÀÔÇÑ´Ù
-int echo = 12;          // º¯¼ö echo¸¦ »ı¼ºÇÏ°í 12À» ´ëÀÔÇÑ´Ù
+int trig = 13;           // ë³€ìˆ˜ trigë¥¼ ìƒì„±í•˜ê³  13ë¥¼ ëŒ€ì…í•œë‹¤
+int echo = 12;          // ë³€ìˆ˜ echoë¥¼ ìƒì„±í•˜ê³  12ì„ ëŒ€ì…í•œë‹¤
 
 void setup() {                      
-pinMode(trig, OUTPUT);  // trig(13)ÇÉÀ» Ãâ·Â¸ğµå·Î ¼³Á¤ÇÑ´Ù
-pinMode(echo, INPUT); // echo(12)ÇÉÀ» ÀÔ·Â¸ğµå·Î ¼³Á¤ÇÑ´Ù
-Serial.begin(9600); //º¸µå·¹ÀÌÆ®¸¦ ¼³Á¤ÇÕ´Ï´Ù.
+pinMode(trig, OUTPUT);  // trig(13)í•€ì„ ì¶œë ¥ëª¨ë“œë¡œ ì„¤ì •í•œë‹¤
+pinMode(echo, INPUT); // echo(12)í•€ì„ ì…ë ¥ëª¨ë“œë¡œ ì„¤ì •í•œë‹¤
+Serial.begin(9600); //ë³´ë“œë ˆì´íŠ¸ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.
 }
 
 void loop()
 {
-digitalWrite(trig, HIGH);  // trig(13)ÇÉ¿¡ HIGH½ÅÈ£¸¦ º¸³½´Ù
-delayMicroseconds(10);  // 10¸¶ÀÌÅ©·ÎÃÊ(1/100,000ÃÊ) µ¿¾È
-digitalWrite(trig, LOW);  // trig(13)ÇÉ¿¡ LOW½ÅÈ£¸¦ º¸³½´Ù
+digitalWrite(trig, HIGH);  // trig(13)í•€ì— HIGHì‹ í˜¸ë¥¼ ë³´ë‚¸ë‹¤
+delayMicroseconds(10);  // 10ë§ˆì´í¬ë¡œì´ˆ(1/100,000ì´ˆ) ë™ì•ˆ
+digitalWrite(trig, LOW);  // trig(13)í•€ì— LOWì‹ í˜¸ë¥¼ ë³´ë‚¸ë‹¤
 int distance = pulseIn(echo, HIGH) * 17 / 1000; 
-// º¯¼ö distance = echoÇÉÀÌ ´Ù½Ã HIGH½ÅÈ£¸¦ ¹Ş±â±îÁöÀÇ ½Ã°£ * 17/1000
-Serial.print(distance);  // º¯¼ö distance¸¦ Ãâ·ÂÇÑ´Ù
-Serial.println("cm");   // ¹®ÀÚ¿­ cmÀ» Ãâ·ÂÇÏ°í ÁÙ¹Ù²Ş
+// ë³€ìˆ˜ distance = echoí•€ì´ ë‹¤ì‹œ HIGHì‹ í˜¸ë¥¼ ë°›ê¸°ê¹Œì§€ì˜ ì‹œê°„ * 17/1000
+Serial.print(distance);  // ë³€ìˆ˜ distanceë¥¼ ì¶œë ¥í•œë‹¤
+Serial.println("cm");   // ë¬¸ìì—´ cmì„ ì¶œë ¥í•˜ê³  ì¤„ë°”ê¿ˆ
 
 delay(100);
 }
